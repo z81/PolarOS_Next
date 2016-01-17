@@ -1,0 +1,35 @@
+.startbtn {
+  width: 30px;
+  height: 30px;
+  background: #DDD none repeat scroll 0% 0%;
+  border: 1px solid #C3C3C3;
+  display: inline-block;
+}
+
+.menu {
+  position: fixed;
+  bottom: 30px;
+  left: 0;
+  width: 200px;
+  height: auto;
+  min-height: 200px;
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top-right-radius: 5px;
+
+  box-shadow: inset 0 1px 0 #f5f4f5;
+  background-image: linear-gradient(to bottom, #e8e6e8 0, #d1cfd1 100%);
+}
+
+.userName {
+  font-size: 18pt;
+  padding: 7px;
+  color: #484848;
+  border-bottom: 1px solid #B3B3B3;
+}
+
+.app {
+  font-size: 14pt;
+  padding: 10px;
+
+}

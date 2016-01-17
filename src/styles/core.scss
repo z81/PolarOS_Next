@@ -1,21 +1,21 @@
 @import 'base';
 @import 'vendor/normalize';
 
-// Some best-practice CSS that's useful for most apps
-// Just remove them if they're not what you want
-html {
-  box-sizing: border-box;
-}
+
+// @import '../../node_modules/photon/sass/photon';
 
 html,
 body {
   margin: 0;
   padding: 0;
   height: 100%;
+
+  // Todo: fix
+  // background-image: url('http://127.0.0.1:3000/static/wallpapers/mxcp210651.png');
+
 }
 
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
+
+.view, .page {
+  height: 100%;
 }

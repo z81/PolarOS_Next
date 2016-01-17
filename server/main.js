@@ -1,6 +1,7 @@
 import express from 'express'
 import historyApiFallback from 'connect-history-api-fallback'
 import config from '../config'
+import graphqlApp from './graphql-server'
 
 const app = express()
 const debug = require('debug')('app:server')
@@ -9,6 +10,8 @@ const paths = config.utils_paths
 app.use(historyApiFallback({
   verbose: false
 }))
+
+graphqlApp(app)
 
 // Serve app with Webpack if HMR is enabled
 if (config.compiler_enable_hmr) {

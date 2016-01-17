@@ -9,6 +9,7 @@ const store = configureStore(window.__INITIAL_STATE__)
 
 syncReduxAndRouter(history, store, (state) => state.router)
 
+
 // Render the React application to the DOM
 ReactDOM.render(
   <Root history={history} routes={routes} store={store} />,

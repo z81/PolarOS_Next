@@ -1,4 +1,7 @@
-import '../styles/core.scss'
+import style from '../styles/core.scss'
+
+import '../../node_modules/photon/sass/photon.scss'
+
 
 // Note: Stateless/function components *will not* hot reload!
 // react-transform *only* works on component classes.
@@ -11,8 +14,8 @@ import '../styles/core.scss'
 // define it with a plain javascript function...
 function CoreLayout ({ children }) {
   return (
-    <div className='page-container'>
-      <div className='view-container'>
+    <div className={style.page}>
+      <div className={style.view}>
         {children}
       </div>
     </div>

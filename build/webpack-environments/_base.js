@@ -18,6 +18,7 @@ const CSS_LOADER = !config.compiler_css_modules
     'localIdentName=[name]__[local]___[hash:base64:5]'
   ].join('&')
 
+
 const webpackConfig = {
   name: 'client',
   target: 'web',
@@ -25,10 +26,11 @@ const webpackConfig = {
     app: [
       paths.base(config.dir_client) + '/main.js'
     ],
-    vendor: config.compiler_vendor
+    vendor: config.compiler_vendor,
+    apps: paths.base(config.dir_client) + '/../apps/main.js'
   },
   output: {
-    filename: `[name].[${config.compiler_hash_type}].js`,
+    filename: `[name].js`,//.[${config.compiler_hash_type}].js`,
     path: paths.base(config.dir_dist),
     publicPath: config.compiler_public_path
   },
@@ -80,6 +82,7 @@ const webpackConfig = {
       },
       {
         test: /\.scss$/,
+        exclude: /photon/,
         loaders: [
           'style',
           CSS_LOADER,
@@ -88,6 +91,32 @@ const webpackConfig = {
         ]
       },
       {
+        test: /photon\/.*\.scss$/,
+        loaders: [
+          'style',
+          'css?sourceMap',
+          'postcss',
+          'sass'
+        ]
+      },
+      /*{
+        test: /photon.*\.scss$/,
+        loaders: [
+          'style',
+          'postcss',
+          'sass'
+        ]
+      },
+      {
+        test: /\/((?!photon).)*\/[a-zA-Z_]\.scss$/,
+        loaders: [
+          'style',
+          CSS_LOADER,
+          'postcss',
+          'sass'
+        ]
+      },*/
+      {
         test: /\.css$/,
         loaders: [
           'style',
@@ -95,13 +124,14 @@ const webpackConfig = {
           'postcss'
         ]
       },
+
       /* eslint-disable */
       { test: /\.woff(\?.*)?$/,  loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff' },
       { test: /\.woff2(\?.*)?$/, loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/font-woff2' },
       { test: /\.ttf(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=application/octet-stream' },
       { test: /\.eot(\?.*)?$/,   loader: 'file?prefix=fonts/&name=[path][name].[ext]' },
       { test: /\.svg(\?.*)?$/,   loader: 'url?prefix=fonts/&name=[path][name].[ext]&limit=10000&mimetype=image/svg+xml' },
-      { test: /\.(png|jpg)$/,    loader: 'url?limit=8192' }
+      { test: /\.(png|jpeg)$/,    loader: 'url?limit=8192' }
       /* eslint-enable */
     ]
   },

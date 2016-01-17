@@ -1,0 +1,155 @@
+.window-wrapper {
+}
+
+.controls > * {
+  line-height: 11px;
+  font-size: 2em;
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+}
+
+.controls > *::before {
+  content: '\0';
+  font-size: 0px;
+  vertical-align: top;
+  line-height: 10px;
+}
+
+.controls {
+  font-family: FontAwesome;
+  color: rgba(0, 0, 0, 0.37);
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .close {
+      width: 12px;
+      height: 12px;
+      background-color: #fc605b;
+      display: inline-block;
+      border-radius: 12px;
+      margin-top: 4px;
+      margin-right: 5px;
+      border: 1px solid #fb1710;
+  }
+
+  .close:hover {
+    background-color: #FB2A24;
+  }
+
+  .max {
+      width: 12px;
+      height: 12px;
+      background-color: #fdbc40;
+      display: inline-block;
+      border-radius: 12px;
+      margin-top: 4px;
+      margin-right: 5px;
+      border: 1px solid #E49A0C;
+  }
+
+  .max:hover {
+    background-color: #FDA90A;
+  }
+
+  .min {
+      width: 12px;
+      height: 12px;
+      background-color: #34c84a;
+      display: inline-block;
+      border-radius: 12px;
+      margin-top: 4px;
+      margin-right: 5px;
+      border: 1px solid #29a03b;
+  }
+
+  .min:hover {
+    background-color: #00C31D;
+  }
+
+  .disabled {
+    background-color: #B0BFB3 !important;
+    border: none;
+  }
+
+  .disabled:hover::before {
+    background-color: #B0BFB3 !important;
+    font-size: 0px !important;
+    content: '\0';
+  }
+}
+
+.window {
+   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.75) !important;
+   .title:hover .controls{
+      .close::before {
+          content: "\f00d";
+          font-size: 11px;
+          line-height: 12px;
+          vertical-align: top;
+      }
+
+      .max::before {
+          content: "\f0c8";
+          font-size: 8px;
+          vertical-align: top;
+          line-height: 10px;
+      }
+
+      .min::before {
+          content: "\f068";
+          font-size: 8px;
+          vertical-align: bottom;
+          line-height: 9px;
+      }
+      .disabled::before {
+          content: "\0";
+          font-size: 0px;
+      }
+   }
+}
+
+.window-min {
+  display: none;
+}
+
+.windows>* {
+  position: fixed;
+  overflow: hidden;
+}
+
+.window {
+  box-shadow: 0 0 30px rgba(0,0,0,.1);
+  border: 1px solid #bebebe;
+  border-radius: 6px;
+}
+
+.example-enter {
+  opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+  opacity: 1;
+}
+
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.draggable_fix {
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  position: fixed;
+  display: none;
+  z-index: 99999;
+}

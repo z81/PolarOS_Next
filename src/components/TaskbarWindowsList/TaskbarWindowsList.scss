@@ -1,0 +1,12 @@
+.windows {
+  position: absolute;
+}
+
+.win {
+  compose: 'windows';
+  text-align: center;
+  vertical-align: middle;
+  line-height: 35px;
+  padding: 10px;
+  border-right: 1px solid rgba(158, 158, 158, 0.8);
+}

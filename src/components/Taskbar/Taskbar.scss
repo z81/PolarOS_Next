@@ -1,0 +1,41 @@
+$height: 30px;
+
+.panel {
+  position: fixed;
+  /* photon style */
+  box-shadow: inset 0 1px 0 #f5f4f5;
+  background-image: linear-gradient(to bottom, #e8e6e8 0, #d1cfd1 100%);
+
+}
+
+.bottom {
+  compose: 'panel';
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: $height;
+}
+
+.top {
+  compose: 'panel';
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: $height;
+}
+
+.left {
+  compose: 'panel';
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: $height;
+}
+
+.right {
+  compose: 'panel';
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: $height;
+}
